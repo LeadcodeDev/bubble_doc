@@ -1,0 +1,111 @@
+p > code:not([class]) {
+  padding: 0.2rem 0.50rem;
+  border-width: 1px;
+  border-color: #E5E7EB;
+  color: #374151;
+  background-color: #F3F4F6;
+  border-radius: 0.5rem;
+}
+
+pre.shiki {
+  max-width: 100%;
+  overflow-x: scroll;
+  padding: 1.5em 0;
+  margin: 1rem 0;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+pre > code {
+  display: flex;
+  flex-direction: column;
+}
+
+pre.language:not([data-lang="plain"]) code > span {
+  font-style: normal;
+  padding: 0.2rem 1.8em;
+  min-height: 2em;
+  width: 100%;
+}
+
+pre[data-lang="plain"] code > span {
+  margin: -1.5px 1.8rem;
+  width: 100%;
+}
+
+pre > code span {
+  width: 100%;
+}
+
+pre.mermaid {
+  max-width: 100%;
+  overflow-x: scroll;
+  padding: 1.5em 0;
+  margin: 1rem 0;
+  border-radius: 10px;
+  font-size: 14px;
+
+  & > svg {
+    width: 100%;
+    max-width: 100% !important;
+  }
+}
+
+.line.highlight {
+  background-color: #40455e;
+}
+
+.line.remove {
+  position: relative;
+  background-color: rgba(164, 5, 5, 0.4);
+}
+
+.line.remove:before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.line.insert {
+  position: relative;
+  background-color: rgba(0, 119, 5, 0.4);
+}
+
+.line.insert:before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(100%);
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+ul > li {
+  list-style: none;
+  padding: 0.2rem 2rem;
+}
+
+summary {
+  list-style: none;
+  position: relative;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after {
+  content: url('https://api.iconify.design/solar/alt-arrow-right-linear.svg?height=16');;
+  position: absolute;
+  right: 0;
+  transform: rotate(0);
+}
+
+details[open] summary:after {
+  transform: rotate(90deg);
+}
