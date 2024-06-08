@@ -132,7 +132,7 @@ String createCalloutBlock(String? type, String content, String? title) {
   return '''
   <div
     class="$containerClass inline-flex w-full items-center gap-x-3 border border-dashed hover:border-solid px-5 py-4 my-2 rounded-lg">
-  <div class="py-2">
+  <div class="self-start ${title == null ? 'py-2' : ''}">
     $icon
   </div>
   <div class="flex-1">
