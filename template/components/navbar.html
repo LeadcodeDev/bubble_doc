@@ -1,0 +1,16 @@
+<div class="sticky top-0 z-50 inline-flex items-center justify-between w-full bg-white border-b border-gray-200 h-[60px] px-5">
+  <div>
+    <a href="/" class="logo" title="AdonisJS">
+      <span class="sr-only">AdonisJS</span>
+      <img src="https://avatars.githubusercontent.com/u/105711639?s=200&v=4" class="h-10 rounded-lg" alt= />
+    </a>
+  </div>
+  <div>
+    Searchbar
+  </div>
+  <div>
+    {% for link in links %}
+    <a href="{{ link.to }}">{{ link.label }}</a>
+    {% endfor %}
+  </div>
+</div>

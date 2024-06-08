@@ -1,0 +1,27 @@
+{% extends 'layouts/layout.html' %}
+
+{% block body %}
+<div class="flex relative">
+  <div class="sticky top-[60px] bg-white flex flex-col gap-y-5 w-[280px] border-r border-gray-200 py-5" style="height: calc(100dvh - 60px);">
+    <details open>
+      <summary class="text-md font-semibold pl-5 mr-5">Hello</summary>
+      <div class="flex flex-col mt-3">
+        <a href="" class="text-sm font-light bg-blue-100 py-2 px-5">Introduction</a>
+        <a href="" class="text-sm font-light bg-white py-2 px-5">Getting Started</a>
+      </div>
+    </details>
+
+    <details open>
+      <summary class="text-md font-semibold pl-5 mr-5">Guide</summary>
+      <div class="flex flex-col mt-3">
+        <a href="" class="text-sm font-light bg-blue-100 py-2 px-5">Introduction</a>
+        <a href="" class="text-sm font-light bg-white py-2 px-5">Getting Started</a>
+      </div>
+    </details>
+
+  </div>
+  <div class="max-w-4xl w-full mx-auto">
+    {{ content }}
+  </div>
+</div>
+{% endblock %}
