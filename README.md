@@ -19,6 +19,6 @@ As a big fan of the Dart language, I decided to create Bubble using the Dart lan
 Installing Bubble is very simple, just use this repository as the [template](https://github.com/new?template_name=bubble_doc&template_owner=LeadcodeDev) for your project.
 
 Once done, simply run the following command to install the dependencies:
-``bash
+```bash
 dart pub get
 ```
