@@ -34,6 +34,16 @@ Once done, simply run the following command to install the dependencies:
 dart pub get
 ```
 
+## Roadmap
+- [ ] Include sitemap.xml
+- [ ] Enhance documentation ui
+- [ ] Add algolia search engine
+- [ ] Add dark mode
+- [ ] Simplify the configuration file (via yaml)
+- [ ] Add all metadata to the markdown files
+- [ ] Target layout file from the markdown file
+- [ ] Add a search engine
+
 ## Benchmark
 
 Bubble is a very fast tool for generating documentation, here is a comparison with other tools:
