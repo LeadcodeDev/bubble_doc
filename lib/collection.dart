@@ -41,8 +41,6 @@ final class Collection {
       ContentTransformer? transformer,
         List<BlockSyntax> blocks = const []
       }) {
-    Stopwatch watch = Stopwatch();
-    watch.start();
     _fileParser = FileParser(transformer: transformer ?? HtmlTextTransformer());
     _fileLoader.load(source);
 
@@ -64,9 +62,6 @@ final class Collection {
         layout: File('${templates.path}/${layout?.path}'),
         environment: environment,
     );
-
-    watch.stop();
-    print('Collection loaded in ${watch.elapsedMilliseconds}ms');
   }
 
   Future<Response> handle(Request request, String path) async {
