@@ -1,24 +1,24 @@
 # Bubble Documentation
 
 ## Motivation
-Il existe une multitude d'outils permettant de concevoir des documentations tels que [Undocs](https://undocs.pages.dev), [VitePress](https://vitepress.dev), [Docusaurus](https://docusaurus.io) ou encore [Docs-boilerplate](https://github.com/dimerapp/docs-boilerplate) utilisé pour l'ensemble des packages d'Adonis.
-Le problème à l'exception du boilerplater d'Adonis est qu'ils utilisent tous un framework/librairie frontend qui à mon sens n'est pas nécessaire pour la conception d'une documentation.
+There are a multitude of tools for designing documentation, such as [Undocs](https://undocs.pages.dev), [VitePress](https://vitepress.dev), [Docusaurus](https://docusaurus.io) and [Docs-boilerplate](https://github.com/dimerapp/docs-boilerplate) used for all Adonis packages.
+The problem, with the exception of the Adonis boilerplate, is that they all use a frontend framework/library which, in my opinion, is not necessary for the design of documentation.
 
-Lorsque nous parlons de documentation et ainsi d'une approche "content first", nous pensons directement au framework [Astro](https://astro.build/) qui promet une génération de documents statiques depuis des fichiers markdown relativement effeciente; cependant cet outil n'est pas conçu pour être utilisé pleinement dans le cadre de la documentation d'un projet.
+When we talk about documentation and thus a "content first" approach, we think directly of the [Astro] framework (https://astro.build/) which promises relatively efficient generation of static documents from markdown files; however, this tool is not designed to be used fully for project documentation.
 
-C'est pourquoi j'ai décidé de créer Bubble, un outil permettant de générer une documentation à partir de fichiers markdown sans avoir besoin d'utiliser un framework frontend.
+This is why I decided to create Bubble, a tool for generating documentation from markdown files without the need to use a frontend framework.
 
-### Choix de la technologies
+### Choice of technologies
 
-En tant que grand adepte du langage Dart, j'ai décidé de créer Bubble en utilisant le langage Dart afin de profiter de sa vitesse génération de contenu lors de la phase de build.
+As a big fan of the Dart language, I decided to create Bubble using the Dart language in order to take advantage of its content generation speed during the build phase.
 
 > [!NOTE]
-> Bubble permet de générer plus de pages qu'Astro 👀
+> Bubble can generate more pages than Astro 👀
 
 ## Installation
-L'installation de Bubble est très simple, il suffit d'utiliser ce repository comme [template](https://github.com/new?template_name=bubble_doc&template_owner=LeadcodeDev) pour votre projet.
+Installing Bubble is very simple, just use this repository as the [template](https://github.com/new?template_name=bubble_doc&template_owner=LeadcodeDev) for your project.
 
-Une fois fait, il vous suffit de lancer la commande suivante pour installer les dépendances:
-```bash
+Once done, simply run the following command to install the dependencies:
+``bash
 dart pub get
 ```
