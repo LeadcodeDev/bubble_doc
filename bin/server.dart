@@ -9,7 +9,8 @@ import 'package:shelf_static/shelf_static.dart';
 void main(List<String> args) async {
   final docs = Collection(
     match: '/docs/<ignored|.*>',
-    source: Directory('${Directory.current.path}/content/docs'),
+    prefix: 'docs',
+    source: Directory('${Directory.current.path}/content'),
     templates: Directory('${Directory.current.path}/template'),
     layout: File('pages/docs.html'),
     globals: {

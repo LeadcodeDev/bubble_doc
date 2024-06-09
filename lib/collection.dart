@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bubble_doc/block_parsers/transformers/html_text_transformer.dart';
+import 'package:bubble_doc/collection_builder.dart';
 import 'package:bubble_doc/collection_handler.dart';
 import 'package:bubble_doc/block_parsers/content_transformer.dart';
 import 'package:bubble_doc/file_loader.dart';
@@ -15,6 +16,7 @@ final class Collection {
   final FileLoader _fileLoader = FileLoader();
 
   late final FileParser _fileParser;
+  late final CollectionBuilder _collectionBuilder;
 
   final Map<String, dynamic> globals;
   final List<Page> pages = [];
@@ -22,6 +24,7 @@ final class Collection {
   late final CollectionHandler _collectionHandler;
 
   final String match;
+  final String prefix;
   final Directory source;
   final File? layout;
 
@@ -34,6 +37,7 @@ final class Collection {
 
   Collection(
       {required this.match,
+      required this.prefix,
       required this.source,
       required this.templates,
       this.layout,
@@ -42,7 +46,7 @@ final class Collection {
         List<BlockSyntax> blocks = const []
       }) {
     _fileParser = FileParser(transformer: transformer ?? HtmlTextTransformer());
-    _fileLoader.load(source);
+    _fileLoader.load(Directory('${source.path}/$prefix'));
 
     blockSyntax.addAll(blocks);
 
@@ -62,6 +66,13 @@ final class Collection {
         layout: File('${templates.path}/${layout?.path}'),
         environment: environment,
     );
+
+    _collectionBuilder = CollectionBuilder(
+      pages: pages,
+      layout: File('${templates.path}/${layout?.path}'),
+      environment: environment,
+      prefix: prefix,
+    );
   }
 
   Future<Response> handle(Request request, String path) async {
@@ -71,5 +82,9 @@ final class Collection {
     } catch (e) {
       return Response.notFound(e.toString());
     }
+  }
+
+  Future<void> build() async {
+    await _collectionBuilder.build();
   }
 }
